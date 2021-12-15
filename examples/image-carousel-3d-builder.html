@@ -1,0 +1,111 @@
+<!doctype html>
+<!--[if lt IE 7]>
+	<html class="no-js lt-ie9 lt-ie8 lt-ie7 lt-ie10">
+<![endif]-->
+<!--[if IE 7]> 
+	<html class="no-js lt-ie9 lt-ie8 lt-ie10">
+<![endif]-->
+<!--[if IE 8]>
+	<html class="no-js lt-ie9 lt-ie10">
+<![endif]-->
+<!--[if IE 9]>
+	<html class="no-js lt-ie10">
+<![endif]-->
+<!--[if gt IE 9]><!-->
+<html class="no-js" lang="en-us">
+	<!--<![endif]-->
+
+<head>
+	<title>Image Carousel 3D</title>
+	
+    <link rel="stylesheet" type="text/css" href="../build/files/image-carousel-3d.css">
+    
+    
+	<style type="text/css">	
+	body {
+	background-color: #000;
+	margin: 0px;	
+    }
+
+</style>
+</head>
+
+<body>
+
+   
+	
+ 
+	  <div id="imgCarousel3d"> 
+
+	      
+	   </div>
+
+    <script src="https://code.jquery.com/jquery-2.2.4.js" integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI=" crossorigin="anonymous"></script>         
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/1.11.8/TweenLite.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/1.11.8/easing/EasePack.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/1.11.8/plugins/CSSPlugin.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/1.11.8/utils/Draggable.min.js"></script>
+    
+    <script src="../build/files/image-carousel-3d-builder-min.js"></script>
+    
+    <script type="text/template" id="imgCarousel3dTemplate">
+        
+      <div class="title-container"><span>{{title}}</span></div>
+
+	      <div class="imgs-container">
+
+	       {{#list}}
+
+	          <div class="imgs" id="{{type}}">
+               
+               {{#list}}
+	           <div class="img-container">
+		      	 <div class="img-content">
+		      	   <a href="{{link}}" target="{{target}}" class="img-link">
+		      	     <img class="main-img" data-src="{{img}}"  alt="{{title}}" title="{{title}}">	
+		      	     <div class="img-info">		      	     	 
+		      	     	 <div class="title"><strong>{{title}}</strong></div>
+		      	     	 <div class="sub-title"><strong>{{subTitle}}</strong></div>
+		      	     	 
+		      	     </div>      	      
+		      	   </a>   
+		      	  
+		      	   </div>
+		      	   <div class="img-ref">
+		      	     <img class="main-img" data-src="{{img}}" src="{{img}}">	
+		      	   </div>
+		      	</div>  
+		      	{{/list}}
+	      	
+	      	 </div>   
+
+	      {{/list}}
+
+	      </div>
+            
+	      <div class="img-types">
+	      	  <ul>	    
+	      	    {{#list}}  	  	
+	      	  	  <li class="imgs-type {{type}} active" data-connect-id="{{type}}"><div>{{typeName}}</div></li>	      	  	
+	      	  	{{/list}}
+	      	  </ul>
+	      	  <div class="img-selectbar"></div>
+	      </div>
+
+	      <div class="imgs-scrollbar"><div class="scroller"></div></div>
+	  	   
+    </script>
+
+ 
+	<script type="text/javascript">
+		
+     $("#imgCarousel3d").buildImgCarousel3d({
+		 	dataFileUrl: '../build/data/image-carsouel-3d-data.json',
+		 	templateId: 'imgCarousel3dTemplate',
+		 	assetPath: '../build/assets/'
+		 });
+    
+	</script>
+
+</body>
+</html>
