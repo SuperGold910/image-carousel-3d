@@ -1,4 +1,4 @@
-![Alt text](examples/Capture.png?raw=true "")
+![Alt text](examples/screen.png?raw=true "")
 # Image Carsouel 3D
 There are two types of jQuery Plugin included.
 
